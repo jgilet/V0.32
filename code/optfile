@@ -1,0 +1,30 @@
+# This file is where the user can provide for vital information.
+# It needs not to be executed. It will be read by various scripts, ans should stay where it is.
+#---------------------------------------------------------------
+
+# .
+# dirc is the directory where 2012_psom has been installed.
+# Example: dirc="/Users/jstudent/ocean_dynamics/2012_psom" 
+dirc=/Users/jgilet/work_on_structure/V0.31
+
+# .
+# fcomp is the compiler used.
+# Example: fcomp="ifort" or "gfortran". At present, "pgf95" will not work.
+fcomp=ifort
+
+# .
+# netcdf_dir_lib, _dir_inc and _lnk_flag tell where the netcdf libraries may be found
+netcdf_dir_lib=/Users/jgilet/Library/netcdf/lib
+netcdf_dir_inc=/Users/jgilet/Library/netcdf/include
+netcdf_lnk_flag=netcdf -lnetcdff
+
+
+# .
+# lobj (1 line only !) is the entire list of objects to be created in order to compile the executable.
+lobj=relaxation.o main.o ana_uvw.o init_tr.o ini_rho.o inith_thermalwind.o ini_tracer.o mod_io.o momentum.o potdens.o facediv.o intpol_3rdorder.o srcface_3rdorder.o vcenter.o vface.o advect_quick.o cdiv.o cpcors.o cpfine.o efill.o mgrid.o prolong.o resid.o restrict.o mgpfill.o pbc.o sor.o spline.o seval.o sigma_toplayer.o staticsigma.o hsolve.o hfill.o chfine.o hbc.o vhydro.o evalrho.o psolve.o uvchy.o newcor.o newsrc.o coriolis.o hsave.o smooth.o setbc.o linerelax_periodicew.o dgtsl.o energy.o findz_topmoves.o meanh.o rpflattopog.o correctbc.o surfaceflux.o conadjust_sT.o diffusion_wind.o extremes_tr.o checks.o biharmonic.o writeslice.o writeksurf.o writeyslice.o writeisopycnal.o writestrain.o density.o geostroph.o ran3.o  mprove.o dgtsv.o pcorrect.o  diag_vort.o calcskfc.o cfdiv.o pfilter.o viscous.o prepvisc.o srcface_nopy.o tracersource_nut.o windstress.o calc_dvdy.o streamfunction.o n2budget_topbot.o calcn2.o pvcalc.o analytic_eval.o sigma2z.o msg_error.o stprofile_X.o utils.o
+
+# .
+# lmod (1 line only !) is the entire list of modules to be created in order to compile the executable.
+# The dependencies between modules and of objects are (supposed to be) handled by tools/genmakefilel. You should not have to care about these. The order of the modules in lmod should not matter also.
+lmod=header.mod grids.mod particles.mod
+

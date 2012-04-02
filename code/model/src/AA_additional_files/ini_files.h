@@ -1,0 +1,5 @@
+OPEN(121,file='tmp-rho.bin',form='unformatted',access='stream',status='replace')
+OPEN(123,file='tmp-u.bin',form='unformatted',access='stream',status='replace')
+OPEN(124,file='tmp-v.bin',form='unformatted',access='stream',status='replace')
+OPEN(125,file='tmp-parti.bin',form='unformatted',access='stream',status='replace')
+OPEN(126,file='tmp-vor.bin',form='unformatted',access='stream',status='replace')

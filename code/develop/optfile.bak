@@ -1,0 +1,17 @@
+# This file is where the user can provide for vital information.
+# It need not to be executed. It will be read by various scripts, if not moved of course.
+#---------------------------------------------------------------
+
+# .
+# dirc is the directory where 2012_psom has been installed.
+# Example: dirc="/Users/jstudent/ocean_dynamics/2012_psom" 
+dirc=/Users/jgilet/work_on_structure/2012_Jinbow_version/
+
+# .
+# fcomp is the compiler used.
+# Example: fcomp="pgf95"
+fcomp=ifort
+
+
+lobj=
+

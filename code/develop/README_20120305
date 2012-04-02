@@ -1,0 +1,68 @@
+
+V0.2 - 2012/03/05. JBG.
+
+- The structure has been created in that way: code/{exe,mkfile,{model,model_build}/{src,inc}} .
+- genmakefilel and compile_complex.sh have been written and tested in several configurations, but needs some additional tests.
+- 20120227: psom (versionfrom JBW) has been fitted into the structure.
+- 20120302: the declaration has been changed into the new standard. REAL*8 becomes REAL(kind=...).
+    The -real size 64 is not necessary anymore to get realistic features.
+- 20120305: dabs, dsqrt, dexp (old versions of abs, sqrt, exp for kind=2 (!)) have been removed from the code.
+    No impact on the output.
+
+- a lot to do:
+   - improve the portability
+   - add pgf95
+   - add comments
+   - improve the user-friendlyness.
+
+Additional interesting readings:
+  * src/README : all about the modifications of psom itself.
+  * the scripts in tools are commented (or will soon be).
+  * optfile is also roughly commented.
+***********************************************************************************
+
+Here is the directory where the code is hosted and from where the model can be ran.
+
+1. To get started:
+
+* Please edit the ./optfile to set the options that fit your environment. Be careful with the syntax ! 
+* When this file is correctly set, you can type this command:
+   ##############################
+   #  sh tools/compile_complex.sh
+   ##############################
+  It will create the makefile in ./mkfile.
+  
+* Please edit the ./namelist file (not commented...).
+* When this file is correctly set, you can type this command:
+   ##############################
+   # ./exe/nh < ./namelist
+   ##############################
+  It will start and run the model.
+  By default, the output will appear on the screen and the output files will go to ../output/.
+
+
+
+2. Further use:
+
+* If nothing is put in model_build, then the compilation is a classical one. 
+* BUT, this directory comes with a structure (model / model_build) that may make the development easier. You can use it this way:
+    Instead of replacing files in ./model, you can copy (from ./model and then make modifications or from your own versions) .f90 files in ./model_build.
+    When using tools/compile_complex.sh, these new files will overtake those from ./model. The executable will be created based on a combination of old and new .f90 files.   
+
+* If you do not want to use that possibility, you still can use tools/compile_complex.sh, which will then be equivalent to :
+   ##############################
+   # sh tools/genmakefilel
+   # sh tools/compile_simple.sh
+   ##############################
+
+
+3. Additional indications:
+
+* To clean up a bit the mkfile directory, you can type:
+   ##############################
+   # make -Cmkfile/ clean 
+   ##############################
+   Use cleanmore instead of clean to also remove the executable file. 
+
+
+
